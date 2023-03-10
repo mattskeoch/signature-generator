@@ -12,6 +12,7 @@ import phoneImage from '../images/phone-icon-2x.webp'
 export const Preview = ({ data }) => {
   const copyToClipboard = () => {
     const table = document.querySelector('table')
+    console.log(table)
     const tableHtml = table.outerHTML
     const textField = document.createElement('textarea')
     textField.innerText = tableHtml
@@ -19,6 +20,31 @@ export const Preview = ({ data }) => {
     textField.select()
     document.execCommand('copy')
     textField.remove()
+  }
+
+  const selectSignature = () => {
+    const source = document.querySelector('table')
+    console.log(source)
+    const selection = window.getSelection()
+    const range = document.createRange()
+    range.selectNodeContents(source)
+    selection.removeAllRanges()
+    selection.addRange(range)
+    document.execCommand('copy')
+    selection.removeAllRanges()
+  }
+
+  function selectText(containerid) {
+    if (document.selection) {
+      var range = document.body.createTextRange()
+      range.moveToElementText(document.getElementById(containerid))
+      range.select()
+    } else if (window.getSelection) {
+      var range = document.createRange()
+      range.selectNode(document.getElementById(containerid))
+      window.getSelection().removeAllRanges()
+      window.getSelection().addRange(range)
+    }
   }
 
   const { toast } = useToast()
@@ -346,27 +372,38 @@ export const Preview = ({ data }) => {
         </div>
       </div>
 
-      <div
-        className="mt-8 grid max-w-sm grid-cols-2 gap-3"
-        onClick={copyToClipboard}
-      >
+      <div className="mt-8 grid max-w-sm grid-cols-2 gap-3">
         <Button
-          href="/"
+          href=""
           variant="solid"
           color="green"
           onClick={() => {
-            toast({
-              title: 'Signature HTML code copied!',
-              description: (
-                <a href="/">You can now add your signature to Outlook</a>
-              ),
-            })
+            copyToClipboard(),
+              toast({
+                title: 'Signature HTML code copied!',
+                description: (
+                  <a href="/">You can now add your signature to Outlook</a>
+                ),
+              })
           }}
         >
           Copy Signature HTML
         </Button>
 
-        <Button href="/" variant="outline" color="green">
+        <Button
+          href=""
+          variant="outline"
+          color="green"
+          onClick={() => {
+            selectSignature(),
+              toast({
+                title: 'Signature copied!',
+                description: (
+                  <a href="/">You can now add your signature to Outlook</a>
+                ),
+              })
+          }}
+        >
           Copy Signature
         </Button>
       </div>
