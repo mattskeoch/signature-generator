@@ -378,23 +378,6 @@ export const Preview = ({ data }) => {
           variant="solid"
           color="green"
           onClick={() => {
-            copyToClipboard(),
-              toast({
-                title: 'Signature HTML code copied!',
-                description: (
-                  <a href="/">You can now add your signature to Outlook</a>
-                ),
-              })
-          }}
-        >
-          Copy Signature HTML
-        </Button>
-
-        <Button
-          href=""
-          variant="outline"
-          color="green"
-          onClick={() => {
             selectSignature(),
               toast({
                 title: 'Signature copied!',
@@ -405,6 +388,22 @@ export const Preview = ({ data }) => {
           }}
         >
           Copy Signature
+        </Button>
+        <Button
+          href=""
+          variant="outline"
+          color="green"
+          onClick={() => {
+            copyToClipboard(),
+              toast({
+                title: 'Signature HTML code copied!',
+                description: (
+                  <a href="/">You can now add your signature to Outlook</a>
+                ),
+              })
+          }}
+        >
+          Copy Signature HTML
         </Button>
       </div>
     </>
