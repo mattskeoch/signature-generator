@@ -100,18 +100,24 @@ export default function Home() {
           </div>
 
           <div className="mx-auto flex max-w-7xl flex-col items-center px-6 py-8">
-            <h1 className="text-6xl font-bold tracking-tight text-teal-800">
-              Tribe41 Signature Generator
+            <h1 className="text-center text-6xl font-bold tracking-tight text-teal-800">
+              Tribe41 <br />
+              Email Signature Generator
             </h1>
-            <p className=" mt-4 max-w-2xl text-center text-gray-900">
+            <p className=" mt-4 hidden max-w-2xl text-center text-gray-900 lg:flex">
               Create your personalized Tribe41 email signatures in just a few
               clicks. Simply enter your details below and then hit the Copy
               Signature HTML button. If you need help you will find three useful
               links at the bottom page.
             </p>
+
+            <p className=" mt-4 flex max-w-2xl text-center text-gray-900 lg:hidden">
+              Tribe41 email signature generator isn’t available on mobile.
+              Please try it out on a larger screen.
+            </p>
           </div>
 
-          <form className="mx-auto max-w-4xl ">
+          <form className="mx-auto hidden max-w-4xl lg:block">
             <div className="grid grid-cols-2 gap-y-4 gap-x-8">
               <div>
                 <label
@@ -214,7 +220,7 @@ export default function Home() {
               </div>
             </div>
           </form>
-          <div className="mx-auto mt-10 flex max-w-4xl flex-col items-center">
+          <div className="mx-auto mt-10 hidden max-w-4xl flex-col items-center lg:flex">
             <Preview data={signatureInfo} />
 
             <HelpLinks />
