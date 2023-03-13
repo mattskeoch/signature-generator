@@ -32,7 +32,7 @@ export default function Home() {
       </Head>
 
       <main>
-        <div className="relative isolate pt-14">
+        <div className="relative isolate pt-0 xl:pt-14">
           <svg
             className="absolute inset-0 -z-10 block h-full w-full stroke-gray-200 [mask-image:radial-gradient(64rem_64rem_at_top,white,transparent)] "
             aria-hidden="true"
