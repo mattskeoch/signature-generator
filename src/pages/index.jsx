@@ -211,6 +211,7 @@ export default function Home() {
                     type="text"
                     name="address"
                     id="address"
+                    autoComplete="street-address"
                     className="block w-full rounded-md border-0 py-2 px-3.5 text-sm leading-6 text-gray-900 shadow-sm outline-none ring-1 ring-inset ring-slate-200  placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-teal-600"
                     placeholder="21 Tohma Pass, Sydney, NSW 2000"
                     value={signatureInfo.address}

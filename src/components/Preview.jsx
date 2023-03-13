@@ -193,7 +193,7 @@ export const Preview = ({ data }) => {
                                 }}
                               >
                                 <td
-                                  width="30"
+                                  width="34"
                                   style={{
                                     verticalAlign: 'middle',
                                     border: 'none' + ' !important',
@@ -264,7 +264,7 @@ export const Preview = ({ data }) => {
                                     }}
                                   >
                                     <a
-                                      href="/"
+                                      href={`tel:${data.phone}`}
                                       style={{ color: 'rgb(62, 62, 62)' }}
                                     >
                                       <span
@@ -350,7 +350,7 @@ export const Preview = ({ data }) => {
                                   }}
                                 >
                                   <a
-                                    href="'mailto:' + email"
+                                    href={`mailto:${data.email}`}
                                     style={{
                                       textDecoration: 'none' + ' !important',
                                       fontSize: 12 + 'px',
@@ -443,7 +443,7 @@ export const Preview = ({ data }) => {
                                   }}
                                 >
                                   <a
-                                    href="'tel:' + telephone"
+                                    href={`http://maps.google.com/?q=:${data.address}`}
                                     color="#3e3e3e"
                                     style={{
                                       textDecoration: 0 + 'px',
