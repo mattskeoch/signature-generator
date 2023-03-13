@@ -5,9 +5,9 @@ import { ToastAction } from '../components/ui/toast'
 import { Button } from '../components/Button'
 
 import logoImage from '../images/logo.png'
-import addressImage from '../images/address-icon-2x.webp'
-import emailImage from '../images/email-icon-2x.webp'
-import phoneImage from '../images/phone-icon-2x.webp'
+import addressImage from '../images/location.png'
+import emailImage from '../images/email.png'
+import phoneImage from '../images/phone.png'
 
 export const Preview = ({ data }) => {
   const copyToClipboard = () => {
@@ -237,11 +237,10 @@ export const Preview = ({ data }) => {
                                               src={phoneImage}
                                               alt="phone icon"
                                               color="#48B57B"
-                                              width="13"
+                                              width="14"
                                               height="14"
                                               style={{
                                                 display: 'block',
-                                                backgroundColor: '#48b57b',
                                                 border: 'none' + ' !important',
                                               }}
                                             />
@@ -331,11 +330,10 @@ export const Preview = ({ data }) => {
                                             <Image
                                               src={emailImage}
                                               alt="email icon"
-                                              width="13"
+                                              width="14"
                                               height="14"
                                               style={{
                                                 display: 'block',
-                                                backgroundColor: '#48b57b',
                                                 border: 'none' + ' !important',
                                               }}
                                             />
@@ -414,8 +412,7 @@ export const Preview = ({ data }) => {
                                             color="#48B57B"
                                             width="11"
                                             style={{
-                                              display: 'block',
-
+                                              display: 'inline-block',
                                               padding: 0 + 'px',
                                               border: 'none' + ' !important',
                                             }}
@@ -424,12 +421,10 @@ export const Preview = ({ data }) => {
                                               src={addressImage}
                                               alt="address icon"
                                               color="#48B57B"
-                                              width="13"
+                                              width="14"
                                               height="14"
                                               style={{
                                                 color: '#48B57B',
-
-                                                backgroundColor: '#48B57B',
                                                 border: 'none' + ' !important',
                                               }}
                                             />
