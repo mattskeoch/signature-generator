@@ -23,7 +23,7 @@ export const Preview = ({ data }) => {
   }
 
   const selectSignature = () => {
-    const source = document.querySelector('table')
+    const source = document.querySelector('tbody')
     console.log(source)
     const selection = window.getSelection()
     const range = document.createRange()
@@ -32,19 +32,6 @@ export const Preview = ({ data }) => {
     selection.addRange(range)
     document.execCommand('copy')
     selection.removeAllRanges()
-  }
-
-  function selectText(containerid) {
-    if (document.selection) {
-      var range = document.body.createTextRange()
-      range.moveToElementText(document.getElementById(containerid))
-      range.select()
-    } else if (window.getSelection) {
-      var range = document.createRange()
-      range.selectNode(document.getElementById(containerid))
-      window.getSelection().removeAllRanges()
-      window.getSelection().addRange(range)
-    }
   }
 
   const { toast } = useToast()
@@ -72,11 +59,12 @@ export const Preview = ({ data }) => {
               fontSize: 16 + 'px',
               fontFamily: 'Tahoma',
               verticalAlign: '-webkit-baseline-middle',
+              border: 'none' + ' !important',
             }}
           >
-            <tbody>
-              <tr>
-                <td>
+            <tbody style={{ border: 'none' + ' !important' }}>
+              <tr style={{ border: 'none' + ' !important' }}>
+                <td style={{ border: 'none' + ' !important' }}>
                   <table
                     cellPadding="0"
                     cellSpacing="0"
@@ -84,33 +72,59 @@ export const Preview = ({ data }) => {
                       fontSize: 16 + 'px',
                       fontFamily: 'Tahoma',
                       verticalAlign: '-webkit-baseline-middle',
+                      border: 'none' + ' !important',
                     }}
                   >
-                    <tbody>
-                      <tr>
-                        <td width="150" style={{ verticalAlign: 'middle' }}>
+                    <tbody style={{ border: 'none' + ' !important' }}>
+                      <tr style={{ border: 'none' + ' !important' }}>
+                        <td
+                          width="150"
+                          style={{
+                            verticalAlign: 'middle',
+                            border: 'none' + ' !important',
+                          }}
+                        >
                           <span
-                            style={{ marginRight: 20 + 'px', display: 'block' }}
+                            style={{
+                              marginRight: 20 + 'px',
+                              display: 'block',
+                              border: 'none',
+                            }}
                           >
                             <Image
                               src={logoImage}
                               alt="Tribe Logo"
                               role="presentation"
                               width="130"
-                              style={{ maxWidth: 130 + 'px' }}
+                              style={{
+                                maxWidth: 130 + 'px',
+                                border: 'none' + ' !important',
+                              }}
                             />
                           </span>
                         </td>
-                        <td style={{ verticalAlign: 'middle' }}>
+                        <td
+                          style={{
+                            verticalAlign: 'middle',
+                            border: 'none',
+                          }}
+                        >
                           <h3
-                            color="#3e3e3e"
                             style={{
                               margin: 0 + 'px',
-                              fontSize: 18 + 'px',
-                              color: 'rgb(62, 62, 62)',
+                              border: 'none',
+                              fontWeight: 500,
                             }}
                           >
-                            <span>{data.name || 'Jane Doe'}</span>
+                            <span
+                              style={{
+                                border: 'none',
+                                fontSize: 18 + 'px',
+                                color: '#3e3e3e',
+                              }}
+                            >
+                              {data.name || 'Jane Doe'}
+                            </span>
                           </h3>
                           <p
                             color="#3e3e3e"
@@ -121,12 +135,18 @@ export const Preview = ({ data }) => {
                               color: 'rgb(62, 62, 62)',
                               fontSize: 14 + 'px',
                               lineHeight: 22 + 'px',
+                              border: 'none' + ' !important',
                             }}
                           >
-                            <span>{data.title || 'Owner and Manager'}</span>
+                            <span style={{ border: 'none' }}>
+                              {data.title || 'Owner and Manager'}
+                            </span>
                           </p>
                         </td>
-                        <td width="50">
+                        <td
+                          width="50"
+                          style={{ border: 'none' + ' !important' }}
+                        >
                           <div style={{ width: 50 + 'px' }}></div>
                         </td>
                         <td
@@ -135,15 +155,25 @@ export const Preview = ({ data }) => {
                           width="1"
                           style={{
                             width: 10 + 'px',
+                            borderTop: 'none',
+                            borderRight: 'none',
                             borderBottom: 'none',
                             borderLeft:
                               1 + 'px ' + 'solid ' + 'rgb(72, 181, 123)',
                           }}
                         ></td>
-                        <td width="50">
+                        <td
+                          width="50"
+                          style={{ border: 'none' + ' !important' }}
+                        >
                           <div style={{ width: 50 + 'px' }}></div>
                         </td>
-                        <td style={{ verticalAlign: 'middle' }}>
+                        <td
+                          style={{
+                            verticalAlign: 'middle',
+                            border: 'none' + ' !important',
+                          }}
+                        >
                           <table
                             cellPadding="0"
                             cellSpacing="0"
@@ -151,16 +181,23 @@ export const Preview = ({ data }) => {
                               verticalAlign: '-webkit-baseline-middle',
                               fontSize: 'medium',
                               fontFamily: 'Tahoma',
+                              border: 'none' + ' !important',
                             }}
                           >
-                            <tbody>
+                            <tbody style={{ border: 'none' + ' !important' }}>
                               <tr
                                 height="25"
-                                style={{ verticalAlign: 'middle' }}
+                                style={{
+                                  verticalAlign: 'middle',
+                                  border: 'none' + ' !important',
+                                }}
                               >
                                 <td
                                   width="30"
-                                  style={{ verticalAlign: 'middle' }}
+                                  style={{
+                                    verticalAlign: 'middle',
+                                    border: 'none' + ' !important',
+                                  }}
                                 >
                                   <table
                                     cellPadding="0"
@@ -169,150 +206,31 @@ export const Preview = ({ data }) => {
                                       verticalAlign: '-webkit-baseline-middle',
                                       fontSize: 'medium',
                                       fontFamily: 'Tahoma',
+                                      border: 'none' + ' !important',
                                     }}
                                   >
-                                    <tbody>
-                                      <tr>
-                                        <td style={{ verticalAlign: 'bottom' }}>
-                                          <span
-                                            color="#48B57B"
-                                            width="11"
-                                            style={{
-                                              display: 'block',
-                                              backgroundColor:
-                                                'rgb(72,181, 123)',
-                                            }}
-                                          >
-                                            <Image
-                                              src={addressImage}
-                                              alt="address icon"
-                                              color="#48B57B"
-                                              width="13"
-                                              height="14"
-                                              style={{
-                                                display: 'block',
-                                                backgroundColor:
-                                                  'rgb(72,181,123)',
-                                              }}
-                                            />
-                                          </span>
-                                        </td>
-                                      </tr>
-                                    </tbody>
-                                  </table>
-                                </td>
-
-                                <td style={{ padding: 0 + 'px' }}>
-                                  <span
-                                    color="#3e3e3e"
-                                    style={{
-                                      fontSize: 12 + 'px',
-                                      color: 'rgb(62, 62, 62)',
-                                    }}
-                                  >
-                                    <a
-                                      href="/"
-                                      style={{ color: 'rgb(62, 62, 62)' }}
+                                    <tbody
+                                      style={{
+                                        border: 'none' + ' !important',
+                                      }}
                                     >
-                                      <span>
-                                        {data.address ||
-                                          '21 Tohma Pass, Sydney, 2000'}
-                                      </span>
-                                    </a>
-                                  </span>
-                                </td>
-                              </tr>
-                              <tr
-                                height="25"
-                                style={{ verticalAlign: 'middle' }}
-                              >
-                                <td
-                                  width="30"
-                                  style={{ verticalAlign: 'middle' }}
-                                >
-                                  <table
-                                    cellPadding="0"
-                                    cellSpacing="0"
-                                    style={{
-                                      verticalAlign: '-webkit-baseline-middle',
-                                      fontSize: 'medium',
-                                      fontFamily: 'Tahoma',
-                                    }}
-                                  >
-                                    <tbody>
-                                      <tr>
-                                        <td style={{ verticalAlign: 'bottom' }}>
+                                      <tr
+                                        style={{
+                                          border: 'none' + ' !important',
+                                        }}
+                                      >
+                                        <td
+                                          style={{
+                                            verticalAlign: 'bottom',
+                                            border: 'none' + ' !important',
+                                          }}
+                                        >
                                           <span
                                             color="#48B57B"
                                             width="11"
                                             style={{
                                               display: 'block',
-                                              backgroundColor:
-                                                'rgb(72,181, 123)',
-                                            }}
-                                          >
-                                            <Image
-                                              src={emailImage}
-                                              alt="email icon"
-                                              color="#48B57B"
-                                              width="13"
-                                              height="14"
-                                              style={{
-                                                display: 'block',
-                                                backgroundColor:
-                                                  'rgb(72,181, 123)',
-                                              }}
-                                            />
-                                          </span>
-                                        </td>
-                                      </tr>
-                                    </tbody>
-                                  </table>
-                                </td>
-                                <td style={{ padding: 0 + 'px' }}>
-                                  <a
-                                    href="'mailto:' + email"
-                                    color="#3e3e3e"
-                                    style={{
-                                      textDecoration: 'none',
-                                      color: 'rgb(62, 62, 62)',
-                                      fontSize: 12 + 'px',
-                                    }}
-                                  >
-                                    <span>
-                                      {data.email || 'email@tribe41.com.au'}
-                                    </span>
-                                  </a>
-                                </td>
-                              </tr>
-                              <tr
-                                height="25"
-                                style={{ verticalAlign: 'middle' }}
-                              >
-                                <td
-                                  width="30"
-                                  style={{ verticalAlign: 'middle' }}
-                                >
-                                  <table
-                                    cellPadding="0"
-                                    cellSpacing="0"
-                                    style={{
-                                      verticalAlign: '-webkit-baseline-middle',
-                                      fontSize: 'medium',
-                                      fontFamily: 'Tahoma',
-                                    }}
-                                  >
-                                    <tbody>
-                                      <tr>
-                                        <td style={{ verticalAlign: 'bottom' }}>
-                                          <span
-                                            color="#48B57B"
-                                            width="11"
-                                            style={{
-                                              display: 'block',
-                                              backgroundColor:
-                                                'rgb(72,181, 123)',
-                                              padding: 0 + 'px',
+                                              border: 'none',
                                             }}
                                           >
                                             <Image
@@ -323,8 +241,196 @@ export const Preview = ({ data }) => {
                                               height="14"
                                               style={{
                                                 display: 'block',
-                                                backgroundColor:
-                                                  'rgb(72,181, 123)',
+                                                backgroundColor: '#48b57b',
+                                                border: 'none' + ' !important',
+                                              }}
+                                            />
+                                          </span>
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </td>
+
+                                <td
+                                  style={{
+                                    padding: 0 + 'px',
+                                    border: 'none' + ' !important',
+                                  }}
+                                >
+                                  <span
+                                    style={{
+                                      fontSize: 12 + 'px',
+                                      color: 'rgb(62, 62, 62)',
+                                    }}
+                                  >
+                                    <a
+                                      href="/"
+                                      style={{ color: 'rgb(62, 62, 62)' }}
+                                    >
+                                      <span
+                                        style={{
+                                          border: 'none',
+                                          color: '#3e3e3e',
+                                        }}
+                                      >
+                                        {data.phone || '1300 444 888'}
+                                      </span>
+                                    </a>
+                                  </span>
+                                </td>
+                              </tr>
+                              <tr
+                                height="25"
+                                style={{
+                                  verticalAlign: 'middle',
+                                  border: 'none' + ' !important',
+                                }}
+                              >
+                                <td
+                                  width="30"
+                                  style={{
+                                    verticalAlign: 'middle',
+                                    border: 'none' + ' !important',
+                                  }}
+                                >
+                                  <table
+                                    cellPadding="0"
+                                    cellSpacing="0"
+                                    style={{
+                                      verticalAlign: '-webkit-baseline-middle',
+                                      fontSize: 'medium',
+                                      fontFamily: 'Tahoma',
+                                      border: 'none' + ' !important',
+                                    }}
+                                  >
+                                    <tbody
+                                      style={{
+                                        border: 'none' + ' !important',
+                                      }}
+                                    >
+                                      <tr
+                                        style={{
+                                          border: 'none' + ' !important',
+                                        }}
+                                      >
+                                        <td
+                                          style={{
+                                            verticalAlign: 'bottom',
+                                            border: 'none',
+                                          }}
+                                        >
+                                          <span
+                                            color="#48B57B"
+                                            width="11"
+                                            style={{
+                                              display: 'block',
+                                              border: 'none',
+                                            }}
+                                          >
+                                            <Image
+                                              src={emailImage}
+                                              alt="email icon"
+                                              width="13"
+                                              height="14"
+                                              style={{
+                                                display: 'block',
+                                                backgroundColor: '#48b57b',
+                                                border: 'none' + ' !important',
+                                              }}
+                                            />
+                                          </span>
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </td>
+                                <td
+                                  style={{
+                                    padding: 0 + 'px',
+                                    border: 'none' + ' !important',
+                                  }}
+                                >
+                                  <a
+                                    href="'mailto:' + email"
+                                    style={{
+                                      textDecoration: 'none' + ' !important',
+                                      fontSize: 12 + 'px',
+                                    }}
+                                  >
+                                    <span
+                                      style={{
+                                        color: '#3e3e3e',
+                                        border: 'none',
+                                        textDecoration: 'none' + ' !important',
+                                      }}
+                                    >
+                                      {data.email || 'email@tribe41.com.au'}
+                                    </span>
+                                  </a>
+                                </td>
+                              </tr>
+                              <tr
+                                height="25"
+                                style={{
+                                  verticalAlign: 'middle',
+                                  border: 'none' + ' !important',
+                                }}
+                              >
+                                <td
+                                  width="30"
+                                  style={{
+                                    verticalAlign: 'middle',
+                                    border: 'none' + ' !important',
+                                  }}
+                                >
+                                  <table
+                                    cellPadding="0"
+                                    cellSpacing="0"
+                                    style={{
+                                      verticalAlign: '-webkit-baseline-middle',
+                                      fontSize: 'medium',
+                                      fontFamily: 'Tahoma',
+                                      border: 'none' + ' !important',
+                                    }}
+                                  >
+                                    <tbody
+                                      style={{
+                                        border: 'none' + ' !important',
+                                      }}
+                                    >
+                                      <tr
+                                        style={{
+                                          border: 'none' + ' !important',
+                                        }}
+                                      >
+                                        <td
+                                          style={{
+                                            verticalAlign: 'bottom',
+                                            border: 'none' + ' !important',
+                                          }}
+                                        >
+                                          <span
+                                            color="#48B57B"
+                                            width="11"
+                                            style={{
+                                              display: 'block',
+
+                                              padding: 0 + 'px',
+                                              border: 'none' + ' !important',
+                                            }}
+                                          >
+                                            <Image
+                                              src={addressImage}
+                                              alt="address icon"
+                                              color="#48B57B"
+                                              width="13"
+                                              height="14"
+                                              style={{
+                                                color: '#48B57B',
+
+                                                backgroundColor: '#48B57B',
+                                                border: 'none' + ' !important',
                                               }}
                                             />
                                           </span>
@@ -338,18 +444,28 @@ export const Preview = ({ data }) => {
                                   style={{
                                     padding: 0 + 'px',
                                     color: 'rgb(62, 62, 62)',
+                                    border: 'none' + ' !important',
                                   }}
                                 >
                                   <a
                                     href="'tel:' + telephone"
                                     color="#3e3e3e"
                                     style={{
-                                      textDecoration: 'none',
+                                      textDecoration: 0 + 'px',
                                       color: 'rgb(62, 62, 62)',
                                       fontSize: 12 + 'px',
+                                      border: 'none' + ' !important',
                                     }}
                                   >
-                                    <span>{data.phone || '1300 444 888'}</span>
+                                    <span
+                                      style={{
+                                        border: 'none',
+                                        color: '#3e3e3e',
+                                      }}
+                                    >
+                                      {data.address ||
+                                        '21 Tohma Pass, Sydney, 2000'}
+                                    </span>
                                   </a>
                                 </td>
                               </tr>

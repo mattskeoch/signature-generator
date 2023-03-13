@@ -161,26 +161,6 @@ export default function Home() {
 
               <div>
                 <label
-                  htmlFor="email"
-                  className="block text-sm font-semibold leading-6 text-gray-900"
-                >
-                  Studio Email Address
-                </label>
-                <div className="mt-2.5">
-                  <input
-                    type="email"
-                    name="email"
-                    id="email"
-                    className="block w-full rounded-md border-0 py-2 px-3.5 text-sm leading-6 text-gray-900 shadow-sm outline-none ring-1 ring-inset ring-slate-200  placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-teal-600"
-                    placeholder="email@tribe41.com.au"
-                    autoComplete="email"
-                    value={signatureInfo.email}
-                    onChange={handleChange}
-                  />
-                </div>
-              </div>
-              <div>
-                <label
                   htmlFor="phone"
                   className="block text-sm font-semibold leading-6 text-gray-900"
                 >
@@ -195,6 +175,26 @@ export default function Home() {
                     placeholder="1300 444 888"
                     autoComplete="phone"
                     value={signatureInfo.phone}
+                    onChange={handleChange}
+                  />
+                </div>
+              </div>
+              <div>
+                <label
+                  htmlFor="email"
+                  className="block text-sm font-semibold leading-6 text-gray-900"
+                >
+                  Studio Email Address
+                </label>
+                <div className="mt-2.5">
+                  <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    className="block w-full rounded-md border-0 py-2 px-3.5 text-sm leading-6 text-gray-900 shadow-sm outline-none ring-1 ring-inset ring-slate-200  placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-teal-600"
+                    placeholder="email@tribe41.com.au"
+                    autoComplete="email"
+                    value={signatureInfo.email}
                     onChange={handleChange}
                   />
                 </div>
