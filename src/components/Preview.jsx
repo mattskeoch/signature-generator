@@ -489,9 +489,7 @@ export const Preview = ({ data }) => {
             selectSignature(),
               toast({
                 title: 'Signature copied!',
-                description: (
-                  <a href="/">You can now add your signature to Outlook</a>
-                ),
+                description: 'You can now add your signature to Outlook',
               })
           }}
         >
@@ -505,9 +503,7 @@ export const Preview = ({ data }) => {
             copyToClipboard(),
               toast({
                 title: 'Signature HTML code copied!',
-                description: (
-                  <a href="/">You can now add your signature to Outlook</a>
-                ),
+                description: ' You can now add your signature to Outlook',
               })
           }}
         >
