@@ -257,26 +257,23 @@ export const Preview = ({ data }) => {
                                     border: 'none' + ' !important',
                                   }}
                                 >
-                                  <span
+                                  <a
+                                    href={`mailto:${data.phone}`}
                                     style={{
+                                      textDecoration: 'none' + ' !important',
                                       fontSize: 12 + 'px',
-                                      color: 'rgb(62, 62, 62)',
                                     }}
                                   >
-                                    <a
-                                      href={`tel:${data.phone}`}
-                                      style={{ color: 'rgb(62, 62, 62)' }}
+                                    <span
+                                      style={{
+                                        color: '#3e3e3e',
+                                        border: 'none',
+                                        textDecoration: 'none' + ' !important',
+                                      }}
                                     >
-                                      <span
-                                        style={{
-                                          border: 'none',
-                                          color: '#3e3e3e',
-                                        }}
-                                      >
-                                        {data.phone || '1300 444 888'}
-                                      </span>
-                                    </a>
-                                  </span>
+                                      {data.phone || '1300 832 221'}
+                                    </span>
+                                  </a>
                                 </td>
                               </tr>
                               <tr
@@ -446,7 +443,7 @@ export const Preview = ({ data }) => {
                                     href={`http://maps.google.com/?q=:${data.address}`}
                                     color="#3e3e3e"
                                     style={{
-                                      textDecoration: 0 + 'px',
+                                      textDecoration: 'none' + ' !important',
                                       color: 'rgb(62, 62, 62)',
                                       fontSize: 12 + 'px',
                                       border: 'none' + ' !important',
